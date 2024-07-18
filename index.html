@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    
+  <main class="wrapper">
+    <!-- Section for BMI Calculator Form -->
+    <section class="container" aria-labelledby="calculator-heading">
+      <h1 id="calculator-heading">Kalkulator BMI</h1>
+      <p>
+        Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan,
+        berat badan juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu?
+        Yuk, hitung sekarang di kalkulator BMI.
+      </p>
+      <form id="bmi-form">
+        <div class="input-group">
+          <label for="height">Tinggi Badan (Cm):</label>
+          <input type="number" id="height" name="height" required />
+        </div>
+        <div class="input-group">
+          <label for="weight">Berat Badan (Kg):</label>
+          <input type="number" id="weight" name="weight" required />
+        </div>
+        <div class="input-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Jenis Kelamin</option>
+            <option value="male">Pria</option>
+            <option value="female">Wanita</option>
+          </select>
+        </div>
+        <button type="button" onclick="calculateBMI()">Submit BMI</button>
+      </form>
+    </section>
+    <!-- Section for BMI Result -->
+    <aside id="result-card" class="result-card hidden" aria-live="polite">
+      <div id="result"></div>
+    </aside>
+  </main>
+  <script src="./js/script.js"></script>
 </body>
+
 </html>
